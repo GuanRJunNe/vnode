@@ -1,13 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view/> -->
+    <button @click="guan">关瑞军</button>
+    <button @click='rui'>关冰冰</button>
   </div>
 </template>
-
+<script>
+import axios from 'axios'
+export default {
+  methods:{
+    guan(){
+      // var url="http://localhost:3000"
+      // axios.get(url+'/product')
+      // .then(res=>{
+      //   console.log(res);
+      // })
+      // .catch(error=>{
+      //   console.log(error); 
+      // })
+    },
+    rui(){
+      var url = 'http://localhost:3000'
+      axios.post(url+'/order',{name:'guanguan',age:12})
+      .then(res=>{
+        console.log(res);
+      })
+      .catch(error=>{
+        console.log(error);
+      })
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
